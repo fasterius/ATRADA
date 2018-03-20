@@ -9,7 +9,7 @@
 #' @export
 #' @rdname fit_activity
 #' @param data The TRA data (dataframe).
-#' @param well_output File path for the per-well output figure (character).
+#' @param wells_plot File path for the per-well output figure (character).
 #' @param activity_output File path for the activity output figure (character).
 #' @param normalise Wether to normalise the data or not (boolean).
 #' @return A dataframe containing the calculated activities.
@@ -25,7 +25,7 @@
 #' # Get the activity for each well
 #' activity <- fit_activity(data, "wells.png")
 fit_activity <- function(data,
-                         well_output,
+                         wells_plot,
                          activity_output,
                          normalise = FALSE) {
 
@@ -52,7 +52,7 @@ fit_activity <- function(data,
     all_plots <- gridExtra::grid.arrange(grobs = plot_list,
                                          nrow  = 8,
                                          ncol  = 12)
-    ggplot2::ggsave(plot_output, all_plots, width = 20, height = 18)
+    ggplot2::ggsave(wells_plot, all_plots, width = 20, height = 18)
 }
 
 # Function for fitting a sigmoid from time-series data
