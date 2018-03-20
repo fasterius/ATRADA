@@ -1,0 +1,10 @@
+Package: ATRADA
+Title: Automated Turbidity Reduction Assay Data Analysis
+Version: 0.0.1
+Authors@R: person("Erik", "Fasterius", email = "erikfas@kth.se",
+    role = c("aut", "cre"))
+Description: Automated analysis of TRA data.
+Depends: R (>= 3.4.0)
+License: MIT + file LICENCE
+Encoding: UTF-8
+LazyData: true
