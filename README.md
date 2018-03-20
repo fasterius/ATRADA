@@ -4,10 +4,10 @@
 
 ## Overview
 
-ATRADA (Automated Turbidity Reduction Assay Data Analysis) is an R-package for
-analysing TRA data in an automated and easy-to-use manner. It is currently in
-the very early stages of development and is thus **NOT** ready for any sort of
-use beyond testing. *Use with causon*, in other words.
+ATRADA (**Automated Turbidity Reduction Assay Data Analysis**) is an R-package
+for analysing TRA data in an automated and easy-to-use manner. It is currently
+in the very early stages of development and is thus **NOT** ready for any sort
+of use beyond testing. *Use with cauton*, in other words.
 
 ATRADA's features include:
 
@@ -34,7 +34,7 @@ devtools::install_github("fasterius/ATRADA")
 ## Usage
 
 Using ATRADA is simple. All you need is the installed package itself and your
-TRA data in a `CSV` file. Analysing the activity in each well of your
+TRA data in a `CSV` file. Analysing the maximal activity in each well of your
 experiment requires very little code:
 
 ```{r
@@ -49,7 +49,8 @@ fit_activity(data, "wells.png")
 ```
 
 <p align="center">
-    <img src="man/figures/example_wells.png", alt="Example plate output"/>
+    <img src="man/figures/example_wells.png" width="600" height="540",
+     alt="Example plate output"/>
 </p>
 
 ## License
