@@ -65,17 +65,17 @@ fit_sigmoid <- function(OD600, max_od600) {
     well <- data.frame(time, OD600, row.names = NULL)
 
     # Fit to sigmoid
-    fit <- nls(OD600 ~ a + ((b - a) / (1 + exp(-c * (time - d)))),
+    fit <- stats::nls(OD600 ~ a + ((b - a) / (1 + exp(-c * (time - d)))),
                data      = well,
                algorithm = "port",
                control   = list(warnOnly = TRUE),
                start     = list(a = min(OD600),
                                 b = max(OD600),
                                 c = 1,
-                                d = median(time)))
+                                d = stats::median(time)))
 
     # Get fitted sigmoidal line for plotting
-    fit_line <- data.frame(time = time, OD600 = predict(fit, time))
+    fit_line <- data.frame(time = time, OD600 = stats::predict(fit, time))
 
     # Calculate maximum slope of fitted sigmoidal line
     kk <- min(diff(fit_line$OD600))
