@@ -4,14 +4,12 @@
 \alias{fit_activity}
 \title{Fit activity data}
 \usage{
-fit_activity(data, wells_plot, activity_output, normalise = FALSE)
+fit_activity(data, wells_output, normalise = FALSE)
 }
 \arguments{
 \item{data}{The TRA data (dataframe).}
 
-\item{wells_plot}{File path for the per-well output figure (character).}
-
-\item{activity_output}{File path for the activity output figure (character).}
+\item{wells_output}{File path for the per-well output figure (character).}
 
 \item{normalise}{Wether to normalise the data or not (boolean).}
 }
