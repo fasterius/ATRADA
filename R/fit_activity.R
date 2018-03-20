@@ -26,7 +26,7 @@
 #' activity <- fit_activity(data, "wells.png")
 fit_activity <- function(data,
                          well_output,
-                         activity_output
+                         activity_output,
                          normalise = FALSE) {
 
     # Get maximum OD600
@@ -53,9 +53,6 @@ fit_activity <- function(data,
                                          nrow  = 8,
                                          ncol  = 12)
     ggplot2::ggsave(plot_output, all_plots, width = 20, height = 18)
-
-    # Calculate specific enzymatic activities
-    results <- fit_specific_activity(data, slope_list)
 }
 
 # Function for fitting a sigmoid from time-series data
@@ -114,15 +111,3 @@ fit_sigmoid <- function(OD600, max_od600) {
     # Return slope and graphical object
     return(list(kk, gg))
 }
-
-# Function for fitting the specific enzymatic activity
-fit_specific_activity <- function(data, slope_list) {
-
-    # Add activities to dataframe
-    data <- data[c("sample",
-                   "replicate",
-                   "concentration")]
-    data$activity <- unlist(slope_list)
-
-    # Remove controls from data
-    data <- data[data$sample != "control", ]
