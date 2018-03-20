@@ -48,6 +48,10 @@ data <- read_tra_data("your_tra_data.csv")
 fit_activity(data, "wells.png")
 ```
 
+<p align="center">
+    <img src="man/figures/example_wells.png", alt="Example plate output"/>
+</p>
+
 ## License
 
 ATRADA is released with a MIT licence. ATRADA is free software: you may
